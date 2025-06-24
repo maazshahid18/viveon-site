@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -17,12 +18,12 @@ export default function HomePage() {
           <p className="text-lg md:text-xl max-w-2xl mx-auto mb-6">
             Trusted by international patients seeking quality, affordability, and expert care in India’s top hospitals.
           </p>
-          <a
+          <Link
             href="/contact"
             className="inline-block bg-white text-blue-700 font-semibold px-6 py-3 rounded hover:bg-gray-100 transition"
           >
             Request Your Free Consultation
-          </a>
+          </Link>
         </div>
       </section>
 
