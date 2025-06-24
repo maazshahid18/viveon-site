@@ -122,14 +122,14 @@ export default function Header() {
         <div className="flex items-center md:hidden">
           <Navigation /> {/* This contains the hamburger icon */}
           <Link href="/" className="text-xl font-bold text-blue-600 ml-4"> {/* Added ml-4 for spacing */}
-            Viveon
+            Viveon Global HealthCare
           </Link>
         </div>
 
         {/* Desktop Left Section: Logo only (Navigation will be on the right) */}
         <div className="flex-shrink-0 hidden md:flex">
           <Link href="/" className="text-xl font-bold text-blue-600">
-            Viveon
+            Viveon Global HealthCare
           </Link>
         </div>
 
