@@ -5,7 +5,6 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <Header />
       <section
         className="relative bg-cover bg-center text-white py-24 px-4"
         style={{ backgroundImage: "url('/hero-bg.jpg')" }}
@@ -87,13 +86,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-blue-600 py-10 text-white text-center">
-        <h2 className="text-2xl font-bold mb-2">Need Medical Advice?</h2>
-        <p className="mb-4">Chat with our expert team and get a free treatment estimate.</p>
-        <a href="/contact" className="inline-block bg-white text-blue-600 px-6 py-3 rounded font-medium hover:bg-gray-100">
-          Request a Free Quote
-        </a>
-      </section>
+      
     </>
   );
 }
