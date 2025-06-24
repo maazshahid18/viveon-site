@@ -5,12 +5,18 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section
-        className="relative bg-cover bg-center text-white py-24 px-4"
-        style={{ backgroundImage: "url('/hero-bg.jpg')" }}
-      >
-        <div className="absolute inset-0 bg-blue-900 bg-opacity-70"></div>
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
+      <section className="relative text-white py-24 px-4 overflow-hidden"> {/* Add overflow-hidden to prevent image overflow if not perfectly sized */}
+        <Image
+          src="/hero-bg.jpg"
+          alt="Cardiology background"
+          layout="fill" // Makes the image fill the parent
+          objectFit="cover" // Ensures the image covers the area without distortion
+          quality={75} // Adjust quality for better performance (default is 75)
+          priority={true} // Load this image with high priority as it's above the fold
+          className="z-0 opacity-40" // Send it to the background
+        />
+        <div className="absolute inset-0  bg-opacity-40 z-10"></div> {/* Ensure overlay is above image */}
+        <div className="relative z-20 max-w-4xl mx-auto text-center"> {/* Ensure content is above overlay */}
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             World-Class Healthcare, Made Accessible
           </h1>
@@ -54,13 +60,15 @@ export default function HomePage() {
             {[
               { title: 'Cardiology', img: '/cardiology.jpg' },
               { title: 'Orthopedics', img: '/orthopedics.jpg' },
-              { title: 'Cancer Care', img: '/oncology.jpg' },
+              { title: 'Cancer Care', img: '/cancer-care.jpg' },
               { title: 'Cosmetic Surgery', img: '/cosmetic.jpg' },
-              { title: 'Transplants', img: '/transplant.jpg' },
-              { title: 'Dental Care', img: '/dental.jpg' },
+              { title: 'Transplants', img: '/transplants.jpg' },
+              { title: 'Dental Care', img: '/dental-care.jpg' },
             ].map((t, i) => (
               <div key={i} className="bg-white rounded-lg shadow hover:shadow-md transition overflow-hidden">
-                <Image src={t.img} alt={t.title} className="w-full h-40 object-cover" />
+                <Image src={t.img} alt={t.title} className="w-full h-40 object-cover" 
+                width={1000}
+                height={500}/>
                 <div className="p-4">
                   <h3 className="text-lg font-semibold text-gray-800">{t.title}</h3>
                 </div>
