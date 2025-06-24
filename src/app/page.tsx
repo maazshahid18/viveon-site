@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function HomePage() {
@@ -60,7 +60,7 @@ export default function HomePage() {
               { title: 'Dental Care', img: '/dental.jpg' },
             ].map((t, i) => (
               <div key={i} className="bg-white rounded-lg shadow hover:shadow-md transition overflow-hidden">
-                <img src={t.img} alt={t.title} className="w-full h-40 object-cover" />
+                <Image src={t.img} alt={t.title} className="w-full h-40 object-cover" />
                 <div className="p-4">
                   <h3 className="text-lg font-semibold text-gray-800">{t.title}</h3>
                 </div>

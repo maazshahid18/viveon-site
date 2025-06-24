@@ -1,8 +1,10 @@
 'use client';
 
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
+// Removed: import Link from 'next/link'; // Re-import Link from next/link
 
-// Navigation Component (previously in './Navigation')
+// Navigation Component
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -28,11 +30,11 @@ function Navigation() {
     <>
       {/* Desktop Navigation */}
       <nav className="hidden md:flex space-x-6 text-sm text-gray-700">
-        <a href="/" className="hover:text-blue-600 transition-colors duration-200">Home</a>
-        <a href="/about" className="hover:text-blue-600 transition-colors duration-200">About</a>
-        <a href="/treatments" className="hover:text-blue-600 transition-colors duration-200">Treatments</a>
-        <a href="/contact" className="hover:text-blue-600 transition-colors duration-200">Contact</a>
-      </nav>
+  <Link href="/" className="hover:text-blue-600 transition-colors duration-200">Home</Link>
+  <Link href="/about" className="hover:text-blue-600 transition-colors duration-200">About</Link>
+  <Link href="/treatments" className="hover:text-blue-600 transition-colors duration-200">Treatments</Link>
+  <Link href="/contact" className="hover:text-blue-600 transition-colors duration-200">Contact</Link>
+</nav>
 
       {/* Mobile Menu Toggle (Hamburger Icon) */}
       <button
@@ -76,35 +78,35 @@ function Navigation() {
 
           {/* Menu Links */}
           <nav className="mt-16 flex flex-col space-y-6">
-            <a
-              href="/"
-              className="text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200"
-              onClick={handleLinkClick}
-            >
-              Home
-            </a>
-            <a
-              href="/about"
-              className="text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200"
-              onClick={handleLinkClick}
-            >
-              About
-            </a>
-            <a
-              href="/treatments"
-              className="text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200"
-              onClick={handleLinkClick}
-            >
-              Treatments
-            </a>
-            <a
-              href="/contact"
-              className="text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200"
-              onClick={handleLinkClick}
-            >
-              Contact
-            </a>
-          </nav>
+  <Link
+    href="/"
+    className="text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200"
+    onClick={handleLinkClick}
+  >
+    Home
+  </Link>
+  <Link
+    href="/about"
+    className="text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200"
+    onClick={handleLinkClick}
+  >
+    About
+  </Link>
+  <Link
+    href="/treatments"
+    className="text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200"
+    onClick={handleLinkClick}
+  >
+    Treatments
+  </Link>
+  <Link
+    href="/contact"
+    className="text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200"
+    onClick={handleLinkClick}
+  >
+    Contact
+  </Link>
+</nav>
         </div>
       </div>
     </>
@@ -119,16 +121,16 @@ export default function Header() {
         {/* Mobile Left Section: Hamburger and Logo */}
         <div className="flex items-center md:hidden">
           <Navigation /> {/* This contains the hamburger icon */}
-          <a href="/" className="text-xl font-bold text-blue-600 ml-4"> {/* Added ml-4 for spacing */}
+          <Link href="/" className="text-xl font-bold text-blue-600 ml-4"> {/* Added ml-4 for spacing */}
             Viveon
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Left Section: Logo only (Navigation will be on the right) */}
         <div className="flex-shrink-0 hidden md:flex">
-          <a href="/" className="text-xl font-bold text-blue-600">
+          <Link href="/" className="text-xl font-bold text-blue-600">
             Viveon
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Navigation (on the right) */}
