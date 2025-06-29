@@ -130,8 +130,7 @@ export default function Header() {
               className="mr-2"
               priority={true}
             />
-            <span className="text-2xl font-extrabold text-[#2C5F56]">Viveon</span>
-            <span className="text-lg font-semibold text-gray-700 ml-2"> Global HealthCare</span>
+            <span className="text-2xl font-extrabold text-[#2C5F56]">Viveon GlobalHealth</span>
           </Link>
         </div>
 
@@ -146,8 +145,7 @@ export default function Header() {
               className="mr-2"
               priority={true}
             />
-            <span className="text-2xl font-extrabold text-[#2C5F56]">Viveon</span>
-            <span className="text-lg font-semibold text-gray-700 ml-2"> Global HealthCare</span>
+            <span className="text-2xl font-extrabold text-[#2C5F56]">Viveon GlobalHealth</span>
           </Link>
         </div>
 
