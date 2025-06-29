@@ -33,7 +33,7 @@ export default function ContactPage() {
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
       <section className="relative text-white py-24 px-4 overflow-hidden bg-gradient-to-r from-[#0F2824] to-[#1C4E20]">
-        <div className="absolute inset-0 bg-black bg-opacity-30 z-10"></div>
+        <div className="absolute inset-0 bg-opacity-30 z-10"></div>
         <div className="relative z-20 max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Get in Touch with Viveon
