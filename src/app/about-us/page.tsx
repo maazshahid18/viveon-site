@@ -42,7 +42,7 @@ export default function AboutUsPage() {
           <div className="md:order-2">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Mission</h2>
             <p className="text-gray-600 leading-relaxed">
-              At Viveon Global Health, our mission is to facilitate seamless access to high-quality, affordable medical treatments for international patients. We strive to be the most trusted bridge between patients seeking care and India&aposs leading hospitals and specialists, ensuring a compassionate, transparent, and efficient healthcare journey.
+              At Viveon Global Health, our mission is to facilitate seamless access to high-quality, affordable medical treatments for international patients. We strive to be the most trusted bridge between patients seeking care and India &apos s leading hospitals and specialists, ensuring a compassionate, transparent, and efficient healthcare journey.
             </p>
           </div>
           <div className="md:order-1">
@@ -64,7 +64,7 @@ export default function AboutUsPage() {
           <div>
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Vision</h2>
             <p className="text-gray-600 leading-relaxed">
-              We envision a world where geographical boundaries do not limit access to exceptional healthcare. By leveraging India&aposs medical advancements and our extensive network, we aim to be the global leader in medical tourism, empowering patients to achieve optimal health outcomes with dignity and peace of mind.
+              We envision a world where geographical boundaries do not limit access to exceptional healthcare. By leveraging India& apos s medical advancements and our extensive network, we aim to be the global leader in medical tourism, empowering patients to achieve optimal health outcomes with dignity and peace of mind.
             </p>
           </div>
           <div>
@@ -87,7 +87,7 @@ export default function AboutUsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-6 bg-[#E0F2F7] rounded-lg shadow-md"> {/* Changed from bg-blue-50 to a light teal */}
               <h3 className="text-xl font-semibold text-[#2C5F56] mb-3">Compassion</h3> {/* Changed text-blue-700 to dark teal */}
-              <p className="text-gray-600">We approach every patient&aposs journey with empathy and understanding, prioritizing their comfort and well-being.</p>
+              <p className="text-gray-600">We approach every patient& apos s journey with empathy and understanding, prioritizing their comfort and well-being.</p>
             </div>
             <div className="p-6 bg-[#E0F2F7] rounded-lg shadow-md"> {/* Changed from bg-blue-50 to a light teal */}
               <h3 className="text-xl font-semibold text-[#2C5F56] mb-3">Integrity</h3> {/* Changed text-blue-700 to dark teal */}
