@@ -1,36 +1,27 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+// The path "../components/BannerCarousel" assumes HomePage.tsx is in a 'pages' directory
+// and BannerCarousel.tsx is in a 'components' directory at the root level.
+import BannerCarousel from "../components/BannerCarousel";
 
 export default function HomePage() {
+  // Define banner data here, which will be passed to BannerCarousel
+  const banners = [
+    {
+      mediaType: "image" as const,
+      imgSrcMobile: "/mobile-banner-1.jpg",
+      imgSrcDesktop: "/banner-1-desktop.jpg",
+      altText: "Cardiology background",
+      title: "",
+      description: "",
+    linkHref:"",
+    linkText:""
+    },  
+  ];
+
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative text-white py-24 px-4 overflow-hidden"> {/* Add overflow-hidden to prevent image overflow if not perfectly sized */}
-        <Image
-          src="/hero-bg.jpg"
-          alt="Cardiology background"
-          layout="fill" // Makes the image fill the parent
-          objectFit="cover" // Ensures the image covers the area without distortion
-          quality={75} // Adjust quality for better performance (default is 75)
-          priority={true} // Load this image with high priority as it's above the fold
-          className="z-0 opacity-40" // Send it to the background
-        />
-        <div className="absolute inset-0  bg-opacity-40 z-10"></div> {/* Ensure overlay is above image */}
-        <div className="relative z-20 max-w-4xl mx-auto text-center"> {/* Ensure content is above overlay */}
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            World-Class Healthcare, Made Accessible
-          </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-6">
-            Trusted by international patients seeking quality, affordability, and expert care in India’s top hospitals.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-white text-blue-700 font-semibold px-6 py-3 rounded hover:bg-gray-100 transition"
-          >
-            Request Your Free Consultation
-          </Link>
-        </div>
-      </section>
+      {/* Hero Section using BannerCarousel component */}
+      <BannerCarousel banners={banners} autoSlideInterval={6000} />
 
       {/* Why Choose Viveon */}
       <section className="py-12 bg-white">
@@ -66,7 +57,7 @@ export default function HomePage() {
               { title: 'Dental Care', img: '/dental-care.jpg' },
             ].map((t, i) => (
               <div key={i} className="bg-white rounded-lg shadow hover:shadow-md transition overflow-hidden">
-                <Image src={t.img} alt={t.title} className="w-full h-40 object-cover" 
+                <img src={t.img} alt={t.title} className="w-full h-40 object-cover"
                 width={1000}
                 height={500}/>
                 <div className="p-4">
@@ -92,9 +83,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      
     </>
   );
 }

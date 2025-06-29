@@ -1,10 +1,23 @@
 "use client";
 import Link from 'next/link';
+import Image from 'next/image'; // Ensure Image is imported for both Header and Navigation
 import { useState, useEffect } from 'react';
 
-// Navigation Component (Unchanged from your provided code)
+// Navigation Component
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Define the navigation links with their paths
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about-us" },
+    { name: "Services", href: "/services" },
+    { name: "Network Hospitals", href: "/network-hospitals" },
+    { name: "For Patients", href: "/for-patients" },
+    { name: "For Partners", href: "/for-partners" },
+    { name: "Blog/News", href: "/blog" }, // Common path for blog/news
+    { name: "Contact", href: "/contact" },
+  ];
 
   useEffect(() => {
     if (isOpen) {
@@ -24,11 +37,13 @@ function Navigation() {
 
   return (
     <>
+      {/* Desktop Navigation */}
       <nav className="hidden md:flex space-x-6 text-sm text-gray-700">
-        <Link href="/" className="hover:text-blue-600 transition-colors duration-200">Home</Link>
-        <Link href="/about" className="hover:text-blue-600 transition-colors duration-200">About</Link>
-        <Link href="/treatments" className="hover:text-blue-600 transition-colors duration-200">Treatments</Link>
-        <Link href="/contact" className="hover:text-blue-600 transition-colors duration-200">Contact</Link>
+        {navLinks.map((link) => (
+          <Link key={link.name} href={link.href} className="hover:text-blue-600 transition-colors duration-200">
+            {link.name}
+          </Link>
+        ))}
       </nav>
 
       <button
@@ -67,35 +82,30 @@ function Navigation() {
             </svg>
           </button>
 
-          <nav className="mt-16 flex flex-col space-y-6">
-            <Link
-              href="/"
-              className="text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200"
-              onClick={handleLinkClick}
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              className="text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200"
-              onClick={handleLinkClick}
-            >
-              About
-            </Link>
-            <Link
-              href="/treatments"
-              className="text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200"
-              onClick={handleLinkClick}
-            >
-              Treatments
-            </Link>
-            <Link
-              href="/contact"
-              className="text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200"
-              onClick={handleLinkClick}
-            >
-              Contact
-            </Link>
+          {/* Logo inside the mobile menu */}
+          <div className="flex items-center my-10">
+            <Image
+              src="/logo2.jpeg" // Changed to logo2.jpeg for consistency
+              alt="Viveon Global Healthcare Logo"
+              width={80}
+              height={80}
+              className="mr-3"
+            />
+            <span className="text-2xl font-extrabold text-[#2C5F56]">Viveon</span>
+          </div>
+
+          {/* Mobile Navigation */}
+          <nav className="flex flex-col space-y-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200"
+                onClick={handleLinkClick}
+              >
+                {link.name}
+              </Link>
+            ))}
           </nav>
         </div>
       </div>
@@ -103,7 +113,7 @@ function Navigation() {
   );
 }
 
-// Header Component with Option 2 Logo
+// Header Component with Logo (Unchanged from previous update)
 export default function Header() {
   return (
     <header className="bg-white shadow">
@@ -112,8 +122,15 @@ export default function Header() {
         <div className="flex items-center md:hidden">
           <Navigation />
           <Link href="/" className="ml-4 flex items-center">
-            <span className="text-3xl font-extrabold text-blue-600 mr-2">✚</span> {/* Medical Cross Icon */}
-            <span className="text-2xl font-extrabold text-blue-700">Viveon</span>
+            <Image
+              src="/logo2.jpeg"
+              alt="Viveon Global Healthcare Logo"
+              width={40}
+              height={40}
+              className="mr-2"
+              priority={true}
+            />
+            <span className="text-2xl font-extrabold text-[#2C5F56]">Viveon</span>
             <span className="text-lg font-semibold text-gray-700 ml-2"> Global HealthCare</span>
           </Link>
         </div>
@@ -121,8 +138,15 @@ export default function Header() {
         {/* Desktop Left Section: Logo only (Navigation will be on the right) */}
         <div className="flex-shrink-0 hidden md:flex">
           <Link href="/" className="flex items-center">
-            <span className="text-3xl font-extrabold text-blue-600 mr-2">✚</span> {/* Medical Cross Icon */}
-            <span className="text-2xl font-extrabold text-blue-700">Viveon</span>
+            <Image
+              src="/logo2.jpeg"
+              alt="Viveon Global Healthcare Logo"
+              width={40}
+              height={40}
+              className="mr-2"
+              priority={true}
+            />
+            <span className="text-2xl font-extrabold text-[#2C5F56]">Viveon</span>
             <span className="text-lg font-semibold text-gray-700 ml-2"> Global HealthCare</span>
           </Link>
         </div>
