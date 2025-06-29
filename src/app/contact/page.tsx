@@ -1,5 +1,6 @@
 "use client"; // This directive is important for Next.js 13+ App Router components
 
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 export default function ContactPage() {
@@ -36,7 +37,7 @@ export default function ContactPage() {
             Get in Touch with Viveon
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto mb-6">
-            We're here to answer your questions and guide you through your healthcare journey.
+            We&aposre here to answer your questions and guide you through your healthcare journey.
           </p>
         </div>
       </section>
@@ -154,14 +155,14 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Have More Questions?</h2>
           <p className="text-lg mb-8">
-            Don't hesitate to reach out. Our team is ready to assist you.
+            Don&apost hesitate to reach out. Our team is ready to assist you.
           </p>
-          <a
+          <Link
             href="/contact" // Link back to contact page or another relevant page
             className="inline-block bg-white text-[#2C5F56] font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors duration-200 shadow-lg"
           >
             Send Us a Message
-          </a>
+          </Link>
         </div>
       </section>
     </div>

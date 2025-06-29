@@ -1,5 +1,7 @@
 "use client"; // This directive is important for Next.js 13+ App Router components
 
+import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 // import Image from 'next/image'; // Removed: Replaced with standard <img>
 // import Link from 'next/link';   // Removed: Replaced with standard <a>
@@ -24,7 +26,7 @@ export default function AboutUsPage() {
       {/* Added About Us Image Section */}
       <section className="py-12 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <img
+          <Image
             src="/aboutus.jpg" // Path to your aboutus.jpeg image
             alt="Viveon Global Healthcare Team and Facility"
             width={720} // Updated width to match actual image dimensions
@@ -40,12 +42,12 @@ export default function AboutUsPage() {
           <div className="md:order-2">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Mission</h2>
             <p className="text-gray-600 leading-relaxed">
-              At Viveon Global Healthcare, our mission is to facilitate seamless access to high-quality, affordable medical treatments for international patients. We strive to be the most trusted bridge between patients seeking care and India's leading hospitals and specialists, ensuring a compassionate, transparent, and efficient healthcare journey.
+              At Viveon Global Healthcare, our mission is to facilitate seamless access to high-quality, affordable medical treatments for international patients. We strive to be the most trusted bridge between patients seeking care and India&aposs leading hospitals and specialists, ensuring a compassionate, transparent, and efficient healthcare journey.
             </p>
           </div>
           <div className="md:order-1">
             {/* Replaced Next.js Image with standard <img> tag */}
-            <img
+            <Image
               src="https://placehold.co/600x400/E0F2F7/2C5F56?text=Our+Mission" // Placeholder image
               alt="Our Mission"
               width={600} // Explicit width
@@ -62,12 +64,12 @@ export default function AboutUsPage() {
           <div>
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Vision</h2>
             <p className="text-gray-600 leading-relaxed">
-              We envision a world where geographical boundaries do not limit access to exceptional healthcare. By leveraging India's medical advancements and our extensive network, we aim to be the global leader in medical tourism, empowering patients to achieve optimal health outcomes with dignity and peace of mind.
+              We envision a world where geographical boundaries do not limit access to exceptional healthcare. By leveraging India&aposs medical advancements and our extensive network, we aim to be the global leader in medical tourism, empowering patients to achieve optimal health outcomes with dignity and peace of mind.
             </p>
           </div>
           <div>
             {/* Replaced Next.js Image with standard <img> tag */}
-            <img
+            <Image
               src="https://placehold.co/600x400/D1E7DD/2C5F56?text=Our+Vision" // Placeholder image
               alt="Our Vision"
               width={600} // Explicit width
@@ -85,7 +87,7 @@ export default function AboutUsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-6 bg-[#E0F2F7] rounded-lg shadow-md"> {/* Changed from bg-blue-50 to a light teal */}
               <h3 className="text-xl font-semibold text-[#2C5F56] mb-3">Compassion</h3> {/* Changed text-blue-700 to dark teal */}
-              <p className="text-gray-600">We approach every patient's journey with empathy and understanding, prioritizing their comfort and well-being.</p>
+              <p className="text-gray-600">We approach every patient&aposs journey with empathy and understanding, prioritizing their comfort and well-being.</p>
             </div>
             <div className="p-6 bg-[#E0F2F7] rounded-lg shadow-md"> {/* Changed from bg-blue-50 to a light teal */}
               <h3 className="text-xl font-semibold text-[#2C5F56] mb-3">Integrity</h3> {/* Changed text-blue-700 to dark teal */}
@@ -107,12 +109,12 @@ export default function AboutUsPage() {
             Contact us today for a free consultation and let us guide you every step of the way.
           </p>
           {/* Corrected syntax for comment within JSX attribute */}
-          <a
+          <Link
             href="/contact"
             className="inline-block bg-white text-[#2C5F56] font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors duration-200 shadow-lg" /* Changed text-blue-700 to dark teal */
           >
             Get in Touch
-          </a>
+          </Link>
         </div>
       </section>
     </div>

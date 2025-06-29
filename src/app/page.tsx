@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 // The path "../components/BannerCarousel" assumes HomePage.tsx is in a 'pages' directory
 // and BannerCarousel.tsx is in a 'components' directory at the root level.
 import BannerCarousel from "../components/BannerCarousel";
@@ -57,7 +58,7 @@ export default function HomePage() {
               { title: 'Dental Care', img: '/dental-care.jpg' },
             ].map((t, i) => (
               <div key={i} className="bg-white rounded-lg shadow hover:shadow-md transition overflow-hidden">
-                <img src={t.img} alt={t.title} className="w-full h-40 object-cover"
+                <Image src={t.img} alt={t.title} className="w-full h-40 object-cover"
                 width={1000}
                 height={500}/>
                 <div className="p-4">

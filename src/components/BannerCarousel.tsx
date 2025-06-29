@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 
 // Define the shape of a single banner item
@@ -87,7 +88,7 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ banners, children, auto
         <>
           {/* Mobile image - shown on small screens, hidden on md and up */}
           {currentBanner.imgSrcMobile && (
-            <img
+            <Image
               src={currentBanner.imgSrcMobile}
               alt={currentBanner.altText}
               width={768} // Typical mobile width
@@ -98,7 +99,7 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ banners, children, auto
           )}
           {/* Desktop image - hidden on small screens, shown on md and up */}
           {currentBanner.imgSrcDesktop && (
-            <img
+            <Image
               src={currentBanner.imgSrcDesktop}
               alt={currentBanner.altText}
               width={1920} // Typical desktop width
@@ -109,7 +110,7 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ banners, children, auto
           )}
           {/* Fallback image if neither mobile nor desktop specific images are provided */}
           {!currentBanner.imgSrcMobile && !currentBanner.imgSrcDesktop && currentBanner.imgSrc && (
-            <img
+            <Image
               src={currentBanner.imgSrc}
               alt={currentBanner.altText}
               width={1920}
