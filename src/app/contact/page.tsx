@@ -1,7 +1,7 @@
 "use client"; // This directive is important for Next.js 13+ App Router components
 
-import Link from 'next/link';
 import React, { useState } from 'react';
+// Removed Next.js Link import as standard <a> tags are used in this context
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -9,6 +9,8 @@ export default function ContactPage() {
     email: '',
     subject: '',
     message: '',
+    country: '', // Added country to form data
+    mobile: '',  // Added mobile to form data
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -24,20 +26,20 @@ export default function ContactPage() {
     // Here you would typically send the formData to your backend or an email service
     console.log('Form submitted:', formData);
     alert('Thank you for your message! We will get back to you soon.'); // Using alert for demo, replace with custom modal
-    setFormData({ name: '', email: '', subject: '', message: '' }); // Clear form
+    setFormData({ name: '', email: '', subject: '', message: '', country: '', mobile: '' }); // Clear form
   };
 
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
       <section className="relative text-white py-24 px-4 overflow-hidden bg-gradient-to-r from-[#0F2824] to-[#1C4E20]">
-        <div className="absolute inset-0 bg-opacity-30 z-10"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-30 z-10"></div>
         <div className="relative z-20 max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Get in Touch with Viveon
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto mb-6">
-            We&aposre here to answer your questions and guide you through your healthcare journey.
+            We&apos;re here to answer your questions and guide you through your healthcare journey.
           </p>
         </div>
       </section>
@@ -73,6 +75,32 @@ export default function ContactPage() {
                   className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#2C5F56] focus:border-[#2C5F56] sm:text-sm"
                 />
               </div>
+              {/* Added Country Field */}
+              <div>
+                <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-1">Country</label>
+                <input
+                  type="text"
+                  id="country"
+                  name="country"
+                  value={formData.country}
+                  onChange={handleChange}
+                  required
+                  className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#2C5F56] focus:border-[#2C5F56] sm:text-sm"
+                />
+              </div>
+              {/* Added Mobile Number Field */}
+              <div>
+                <label htmlFor="mobile" className="block text-sm font-medium text-gray-700 mb-1">Mobile Number</label>
+                <input
+                  type="tel" // Use type="tel" for phone numbers
+                  id="mobile"
+                  name="mobile"
+                  value={formData.mobile}
+                  onChange={handleChange}
+                  required
+                  className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#2C5F56] focus:border-[#2C5F56] sm:text-sm"
+                />
+              </div>
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
                 <input
@@ -86,7 +114,7 @@ export default function ContactPage() {
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Your Query</label>
                 <textarea
                   id="message"
                   name="message"
@@ -133,19 +161,7 @@ export default function ContactPage() {
             </div>
 
             {/* Map Placeholder */}
-            <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-4">Find Us on the Map</h3>
-            <div className="w-full h-64 bg-gray-200 rounded-lg overflow-hidden shadow-md">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.938500270138!2d72.55447781496734!3d23.02579048494951!2m3!1f0!2m2!1f0!2f0!3m3!1m2!1s0x395e84f50f8c8b0b%3A0x6b8f8f8f8f8f8f8f!2sAhmedabad%2C%20Gujarat%2C%20India!5e0!3m2!1sen!2sus!4v1678901234567!5m2!1sen!2sus"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen={false}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Google Map of Ahmedabad"
-              ></iframe>
-            </div>
+           
           </div>
         </div>
       </section>
@@ -155,14 +171,14 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Have More Questions?</h2>
           <p className="text-lg mb-8">
-            Don&apost hesitate to reach out. Our team is ready to assist you.
+            Don&apos;t hesitate to reach out. Our team is ready to assist you.
           </p>
-          <Link
+          <a
             href="/contact" // Link back to contact page or another relevant page
             className="inline-block bg-white text-[#2C5F56] font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors duration-200 shadow-lg"
           >
             Send Us a Message
-          </Link>
+          </a>
         </div>
       </section>
     </div>
