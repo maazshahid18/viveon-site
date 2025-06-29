@@ -26,7 +26,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-4">
             {/* Company Info */}
             <div className="md:col-span-2">
-              <h2 className="text-lg font-semibold mb-2">Viveon Global Healthcare</h2>
+              <h2 className="text-lg font-semibold mb-2">Viveon Global Health</h2>
               <p className="text-sm text-gray-300 mb-3">
                 Connecting international patients with world-class medical services in India.
               </p>
@@ -60,7 +60,7 @@ export default function Footer() {
 
           {/* Copyright - more compact */}
           <div className="border-t border-[#2C5F56] text-center py-3 text-sm text-gray-400">
-            © {new Date().getFullYear()} Viveon Global Healthcare. All rights reserved.
+            © {new Date().getFullYear()} Viveon Global Health. All rights reserved.
           </div>
         </div>
       </footer>

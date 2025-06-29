@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 
 export const metadata: Metadata = {
-  title: "Viveon Global Healthcare",
+  title: "Viveon Global Health",
   description: "Connecting international patients with world-class medical services in India.",
 };
 

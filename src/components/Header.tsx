@@ -38,7 +38,7 @@ function Navigation() {
   return (
     <>
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex space-x-6 text-sm text-gray-700">
+      <nav className="hidden md:flex space-x-6 text-lg text-gray-700">
         {navLinks.map((link) => (
           <Link key={link.name} href={link.href} className="hover:text-blue-600 transition-colors duration-200">
             {link.name}
@@ -86,7 +86,7 @@ function Navigation() {
           <div className="flex items-center my-10">
             <Image
               src="/logo.jpeg" // Changed to logo2.jpeg for consistency
-              alt="Viveon Global Healthcare Logo"
+              alt="Viveon Global Health Logo"
               width={80}
               height={80}
               className="mr-3"
@@ -124,7 +124,7 @@ export default function Header() {
           <Link href="/" className="ml-4 flex items-center">
             <Image
               src="/logo.jpeg"
-              alt="Viveon Global Healthcare Logo"
+              alt="Viveon Global Health Logo"
               width={40}
               height={40}
               className="mr-2"
@@ -139,7 +139,7 @@ export default function Header() {
           <Link href="/" className="flex items-center">
             <Image
               src="/logo.jpeg"
-              alt="Viveon Global Healthcare Logo"
+              alt="Viveon Global Health Logo"
               width={100}
               height={100}
               className="mr-2"

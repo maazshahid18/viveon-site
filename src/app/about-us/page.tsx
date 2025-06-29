@@ -15,7 +15,7 @@ export default function AboutUsPage() {
         <div className="absolute inset-0  bg-opacity-30 z-10"></div>
         <div className="relative z-20 max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            About Viveon Global Healthcare
+            About Viveon Global Health
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto mb-6">
             Connecting patients worldwide with world-class medical expertise in India.
@@ -28,7 +28,7 @@ export default function AboutUsPage() {
         <div className="max-w-6xl mx-auto">
           <Image
             src="/aboutus.jpg" // Path to your aboutus.jpeg image
-            alt="Viveon Global Healthcare Team and Facility"
+            alt="Viveon Global Health Team and Facility"
             width={720} // Updated width to match actual image dimensions
             height={405} // Updated height to match actual image dimensions
             className="w-full h-auto object-cover rounded-lg shadow-xl"
@@ -42,7 +42,7 @@ export default function AboutUsPage() {
           <div className="md:order-2">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Mission</h2>
             <p className="text-gray-600 leading-relaxed">
-              At Viveon Global Healthcare, our mission is to facilitate seamless access to high-quality, affordable medical treatments for international patients. We strive to be the most trusted bridge between patients seeking care and India&aposs leading hospitals and specialists, ensuring a compassionate, transparent, and efficient healthcare journey.
+              At Viveon Global Health, our mission is to facilitate seamless access to high-quality, affordable medical treatments for international patients. We strive to be the most trusted bridge between patients seeking care and India&aposs leading hospitals and specialists, ensuring a compassionate, transparent, and efficient healthcare journey.
             </p>
           </div>
           <div className="md:order-1">
