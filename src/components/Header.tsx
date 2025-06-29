@@ -85,7 +85,7 @@ function Navigation() {
           {/* Logo inside the mobile menu */}
           <div className="flex items-center my-10">
             <Image
-              src="/logo2.jpeg" // Changed to logo2.jpeg for consistency
+              src="/logo.jpeg" // Changed to logo2.jpeg for consistency
               alt="Viveon Global Healthcare Logo"
               width={80}
               height={80}
@@ -123,7 +123,7 @@ export default function Header() {
           <Navigation />
           <Link href="/" className="ml-4 flex items-center">
             <Image
-              src="/logo2.jpeg"
+              src="/logo.jpeg"
               alt="Viveon Global Healthcare Logo"
               width={40}
               height={40}
@@ -139,7 +139,7 @@ export default function Header() {
         <div className="flex-shrink-0 hidden md:flex">
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo2.jpeg"
+              src="/logo.jpeg"
               alt="Viveon Global Healthcare Logo"
               width={40}
               height={40}
