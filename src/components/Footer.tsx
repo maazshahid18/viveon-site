@@ -54,7 +54,7 @@ export default function Footer() {
 
       {/* Desktop floating WhatsApp button */}
       <Link
-        href="https://wa.me/919875244331"
+            href="https://wa.me/919875244331?text=Hi i want to enquire about medical tourism" // Link back to contact page or another relevant page
         target="_blank"
         rel="noopener noreferrer"
         className="hidden md:flex fixed bottom-6 right-4 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110"
@@ -67,7 +67,7 @@ export default function Footer() {
 
       {/* Mobile full-width WhatsApp button */}
       <Link
-        href="https://wa.me/919875244331"
+            href="https://wa.me/919875244331?text=Hi i want to enquire about medical tourism" // Link back to contact page or another relevant page
         target="_blank"
         rel="noopener noreferrer"
         className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white text-[#4CAF50] text-center py-3 font-medium flex items-center justify-center gap-2 border-t border-[#4CAF50] shadow-lg transition-all"

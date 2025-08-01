@@ -174,7 +174,7 @@ export default function ContactPage() {
             Don&apos;t hesitate to reach out. Our team is ready to assist you.
           </p>
           <a
-            href="https://wa.me/919875244331" // Link back to contact page or another relevant page
+            href="https://wa.me/919875244331?text=Hi i want to enquire about medical tourism" // Link back to contact page or another relevant page
             className="inline-block bg-white text-[#2C5F56] font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors duration-200 shadow-lg"
           >
             Send Us a Message
