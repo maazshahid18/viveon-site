@@ -34,7 +34,6 @@ export default function Footer() {
                   <li><Link href="/" className="hover:text-[#66BB6A] transition-colors">Home</Link></li>
                   <li><Link href="/about" className="hover:text-[#66BB6A] transition-colors">About Us</Link></li>
                   <li><Link href="/services" className="hover:text-[#66BB6A] transition-colors">Services</Link></li>
-                  <li><Link href="/network-hospitals" className="hover:text-[#66BB6A] transition-colors">Network Hospitals</Link></li>
                 </ul>
                 <ul className="space-y-1">
                   <li><Link href="/for-patients" className="hover:text-[#66BB6A] transition-colors">For Patients</Link></li>

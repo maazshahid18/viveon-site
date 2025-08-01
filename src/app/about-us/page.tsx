@@ -83,7 +83,7 @@ export default function AboutUsPage() {
             <h2 className="text-4xl font-bold text-white text-center">Our Team</h2>
           </div>
           <img
-            src="/slide8.jpg"
+            src="/Slide8.jpg"
             alt="Viveon Global Health Team"
             className="w-full h-auto rounded-lg shadow-lg object-cover mx-auto"
             width={1024}
