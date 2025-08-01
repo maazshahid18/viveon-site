@@ -8,7 +8,7 @@ export default function ServicesPage() {
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
-      <section className="relative text-white py-24 px-4 overflow-hidden bg-gradient-to-r from-[#0F2824] to-[#1C4E20]">
+      <section className="relative text-white py-8 px-4 overflow-hidden bg-gradient-to-r from-[#0F2824] to-[#014c50]">
         <div className="absolute inset-0  bg-opacity-30 z-10"></div>
         <div className="relative z-20 max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -86,20 +86,24 @@ export default function ServicesPage() {
       {/* Why Choose Our Services Section */}
       <section className="py-16 px-4 bg-gray-100">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8">Why Choose Viveon &apos s Services?</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-8">Why Choose Viveon&apos;s Services?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Choosing Viveon means opting for a hassle-free and supportive medical journey. We understand the complexities international patients face, and our dedicated team is committed to providing comprehensive assistance every step of the way. From your initial inquiry to post-treatment follow-up, we ensure your comfort, safety, and peace of mind.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                Our extensive network of top-tier hospitals and highly skilled specialists in India allows us to offer a diverse range of treatments at a fraction of the cost found in many Western countries, without compromising on quality.
-              </p>
+            
+              <ul className="list-disc list-inside text-left text-gray-700 mt-6 text-xl">
+                <li>Expert team with decades of hospital industry experience.</li>
+                <li>Access to India’s top doctors &amp; hospitals</li>
+                <li>Comprehensive Medical Tourism &amp; Advanced Treatment</li>
+                <li>Proven ability to turn around mid to large-scale hospitals</li>
+                <li>Trusted, Transparent, and Truly Affordable Healthcare</li>
+                <li>Strong network in India, Africa, Middle East &amp; Asia.</li>
+                <li>End-to-end solutions under one umbrella.</li>
+              </ul>
             </div>
             <div>
               {/* Placeholder image for why choose us */}
               <Image
-                src="/aboutus.jpg"
+                src="/service.jpg"
                 alt="Why Choose Viveon Services"
                 width={600}
                 height={400}
@@ -111,7 +115,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Call to Action (Re-used from other pages) */}
-      <section className="py-16 px-4 bg-[#2C5F56] text-white text-center">
+      <section className="py-16 px-4 bg-[#014c50] text-white text-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Explore Your Treatment Options?</h2>
           <p className="text-lg mb-8">

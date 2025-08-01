@@ -5,22 +5,10 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <div className="relative overflow-hidden">
-      {/* CTA Section - made more compact */}
-      <section className="w-full py-3 px-6 flex flex-col justify-center items-center bg-[#1A403A] text-center text-white">
-        <h2 className="text-xl font-bold mb-2">Need Medical Advice?</h2>
-        <p className="mb-3 text-sm max-w-md">
-          Chat with our expert team and get a free treatment estimate.
-        </p>
-        <Link
-          href="/contact"
-          className="bg-white text-[#2C5F56] px-5 py-2 rounded font-medium hover:bg-gray-100 text-sm"
-        >
-          Request a Free Quote
-        </Link>
-      </section>
+     
 
       {/* Footer Info Section - optimized grid layout */}
-      <footer className="w-full py-4 px-6 bg-[#1A403A] text-white">
+      <footer className="w-full py-4 px-6 bg-[#014c50] text-white">
         <div className="max-w-6xl mx-auto">
           {/* Main content grid - more compact */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-4">
@@ -33,7 +21,7 @@ export default function Footer() {
               {/* Contact info inline */}
               <div className="space-y-1 text-sm text-gray-300">
                 <p>📍 Ahmedabad, India</p>
-                <p>📞 +91 98765 43210</p>
+                <p>📞 +91 9875244331</p>
                 <p>✉️ support@viveonhealth.com</p>
               </div>
             </div>
@@ -67,7 +55,7 @@ export default function Footer() {
 
       {/* Desktop floating WhatsApp button */}
       <Link
-        href="https://wa.me/919876543210"
+        href="https://wa.me/919875244331"
         target="_blank"
         rel="noopener noreferrer"
         className="hidden md:flex fixed bottom-6 right-4 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110"
@@ -80,7 +68,7 @@ export default function Footer() {
 
       {/* Mobile full-width WhatsApp button */}
       <Link
-        href="https://wa.me/919876543210"
+        href="https://wa.me/919875244331"
         target="_blank"
         rel="noopener noreferrer"
         className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white text-[#4CAF50] text-center py-3 font-medium flex items-center justify-center gap-2 border-t border-[#4CAF50] shadow-lg transition-all"

@@ -1,6 +1,5 @@
 "use client"; // This directive is important for Next.js 13+ App Router components
 
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 // import Image from 'next/image'; // Removed: Replaced with standard <img>
@@ -10,12 +9,11 @@ export default function AboutUsPage() {
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
-      <section className="relative text-white py-24 px-4 overflow-hidden bg-gradient-to-r from-[#0F2824] to-[#1C4E20]"> {/* Changed to even darker teal/green gradient */}
-        {/* Background Image/Overlay - You can replace this with a specific about-us hero image */}
-        <div className="absolute inset-0  bg-opacity-30 z-10"></div>
+      <section className="relative text-white py-16 px-4 overflow-hidden bg-gradient-to-r from-[#0F2824] to-[#014c50]">
+        <div className="absolute inset-0 bg-opacity-30 z-10"></div>
         <div className="relative z-20 max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            About Viveon Global Health
+            About Viveon GlobalHealth
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto mb-6">
             Connecting patients worldwide with world-class medical expertise in India.
@@ -23,95 +21,117 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* Added About Us Image Section */}
-      <section className="py-12 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <Image
-            src="/aboutus.jpg" // Path to your aboutus.jpeg image
-            alt="Viveon Global Health Team and Facility"
-            width={720} // Updated width to match actual image dimensions
-            height={405} // Updated height to match actual image dimensions
-            className="w-full h-auto object-cover rounded-lg shadow-xl"
-          />
-        </div>
-      </section>
-
-      {/* Our Mission Section */}
+      {/* About Us Image Section */}
       <section className="py-16 px-4 bg-white">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="md:order-2">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Mission</h2>
-            <p className="text-gray-600 leading-relaxed">
-              At Viveon Global Health, our mission is to facilitate seamless access to high-quality, affordable medical treatments for international patients. We strive to be the most trusted bridge between patients seeking care and India &apos s leading hospitals and specialists, ensuring a compassionate, transparent, and efficient healthcare journey.
-            </p>
-          </div>
-          <div className="md:order-1">
-            {/* Replaced Next.js Image with standard <img> tag */}
-            <Image
-              src="https://placehold.co/600x400/E0F2F7/2C5F56?text=Our+Mission" // Placeholder image
-              alt="Our Mission"
-              width={600} // Explicit width
-              height={400} // Explicit height
-              className="w-full h-auto rounded-lg shadow-lg object-cover" // Use w-full h-auto for responsiveness
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Our Vision Section */}
-      <section className="py-16 px-4 bg-gray-100"> {/* Changed from bg-blue-50 to bg-gray-100 for a neutral background */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Vision</h2>
-            <p className="text-gray-600 leading-relaxed">
-              We envision a world where geographical boundaries do not limit access to exceptional healthcare. By leveraging India& apos s medical advancements and our extensive network, we aim to be the global leader in medical tourism, empowering patients to achieve optimal health outcomes with dignity and peace of mind.
-            </p>
-          </div>
-          <div>
-            {/* Replaced Next.js Image with standard <img> tag */}
-            <Image
-              src="https://placehold.co/600x400/D1E7DD/2C5F56?text=Our+Vision" // Placeholder image
-              alt="Our Vision"
-              width={600} // Explicit width
-              height={400} // Explicit height
-              className="w-full h-auto rounded-lg shadow-lg object-cover" // Use w-full h-auto for responsiveness
-            />
-          </div>
+        <div className="max-w-6xl mx-auto">
+          <img
+            src="/Slide3.jpg"
+            alt="Viveon Global Health Team and Facility"
+            className="w-full h-auto rounded-lg shadow-lg object-cover mx-auto"
+          />
         </div>
       </section>
 
       {/* Our Values Section */}
       <section className="py-16 px-4 bg-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8">Our Values</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-6 bg-[#E0F2F7] rounded-lg shadow-md"> {/* Changed from bg-blue-50 to a light teal */}
-              <h3 className="text-xl font-semibold text-[#2C5F56] mb-3">Compassion</h3> {/* Changed text-blue-700 to dark teal */}
-              <p className="text-gray-600">We approach every patient& apos s journey with empathy and understanding, prioritizing their comfort and well-being.</p>
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-8 relative text-white py-4 px-6 w-3/4 mx-auto overflow-hidden bg-gradient-to-r from-[#0F2824] to-[#014c50] rounded">
+            <h2 className="text-4xl font-bold text-white text-center">Our Values</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="md:order-2">
+              <p className="text-gray-600 leading-relaxed text-2xl">
+                At Viveon GlobalHealth, we strive to make world-class healthcare truly accessible by offering affordable, ethical, and transformative solutions—from international patient services to strategic hospital consultancy and full-spectrum marketing support.
+              </p>
             </div>
-            <div className="p-6 bg-[#E0F2F7] rounded-lg shadow-md"> {/* Changed from bg-blue-50 to a light teal */}
-              <h3 className="text-xl font-semibold text-[#2C5F56] mb-3">Integrity</h3> {/* Changed text-blue-700 to dark teal */}
-              <p className="text-gray-600">We operate with the highest ethical standards, ensuring transparency and honesty in all our dealings.</p>
+            <div className="md:order-1">
+              <img
+                src="https://placehold.co/600x400/E0F2F7/2C5F56?text=Our+Mission"
+                alt="Our Mission"
+                className="w-full h-auto rounded-lg shadow-lg object-cover mx-auto"
+              />
             </div>
-            <div className="p-6 bg-[#E0F2F7] rounded-lg shadow-md"> {/* Changed from bg-blue-50 to a light teal */}
-              <h3 className="text-xl font-semibold text-[#2C5F56] mb-3">Excellence</h3> {/* Changed text-blue-700 to dark teal */}
-              <p className="text-gray-600">We are committed to connecting patients with top-tier medical facilities and achieving the best possible outcomes.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Vision Section */}
+      <section className="py-16 px-4 bg-gray-100">
+        <div className="max-w-6xl mx-auto">
+         
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-gray-600 leading-relaxed text-2xl">
+                To create a healthier world by being the most trusted global partner in medical tourism and healthcare transformation—where high-quality, ethical, and affordable care is accessible across borders, and hospitals are empowered to grow and excel.
+              </p>
+            </div>
+            <div>
+              <img
+                src="https://placehold.co/600x400/D1E7DD/2C5F56?text=Our+Vision"
+                alt="Our Vision"
+                className="w-full h-auto rounded-lg shadow-lg object-cover mx-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Team Section */}
+      <section className="py-16 px-4 bg-white text-center">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-8 relative text-white py-4 px-6 w-full mx-auto overflow-hidden bg-gradient-to-r from-[#0F2824] to-[#014c50] rounded">
+            <h2 className="text-4xl font-bold text-white text-center">Our Team</h2>
+          </div>
+          <img
+            src="/slide8.jpg"
+            alt="Viveon Global Health Team"
+            className="w-full h-auto rounded-lg shadow-lg object-cover mx-auto"
+            width={1024}
+          />
+        </div>
+      </section>
+
+      {/* Director's Vision Section */}
+      <section className="py-16 px-4 bg-gray-100">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-8 relative text-white py-4 px-6 w-3/4 mx-auto overflow-hidden bg-gradient-to-r from-[#0F2824] to-[#014c50] rounded">
+            <h2 className="text-4xl font-bold text-white text-center">Director&apos;s Vision</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="w-full max-w-sm mx-auto">
+                <img
+                  src="/director1.jpg"
+                  alt="Director of Viveon Global Health"
+                  className="w-full h-96 rounded-lg shadow-lg object-cover"
+                />
+              </div>
+            </div>
+            <div>
+              <p className="text-gray-600 leading-relaxed text-lg">
+                <strong>Visionary Healthcare Leader | Global Patient Mobility Specialist | Strategic Hospital Operations Expert</strong>
+              </p>
+              <p className="text-gray-600 leading-relaxed text-lg mt-4">
+                With over two decades of hands-on experience in hospital management, complete healthcare marketing, and strategic partnerships. His passion lies in transforming healthcare institutions with strategic insight, optimizing operations, and delivering patient-centric services.
+              </p>
+              <p className="text-gray-600 leading-relaxed text-lg mt-4">
+                Our goal is to make Viveon GlobalHealth the premier platform for global patient mobility, known for compassionate care, international access, and unwavering trust. He is committed to making Viveon GlobalHealth a globally respected name in medical value travel and integrated care.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 px-4 bg-[#2C5F56] text-white text-center"> {/* Changed from bg-blue-700 to dark teal */}
+      <section className="py-16 px-4 bg-[#014c50] text-white text-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Begin Your Healthcare Journey?</h2>
           <p className="text-lg mb-8">
             Contact us today for a free consultation and let us guide you every step of the way.
           </p>
-          {/* Corrected syntax for comment within JSX attribute */}
           <Link
             href="/contact"
-            className="inline-block bg-white text-[#2C5F56] font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors duration-200 shadow-lg" /* Changed text-blue-700 to dark teal */
+            className="inline-block bg-white text-[#2C5F56] font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors duration-200 shadow-lg"
           >
             Get in Touch
           </Link>

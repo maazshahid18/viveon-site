@@ -102,10 +102,10 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ banners, children, auto
             <Image
               src={currentBanner.imgSrcDesktop}
               alt={currentBanner.altText}
-              width={1920} // Typical desktop width
-              height={1080} // Maintain aspect ratio (e.g., 16:9 for 1920px width)
-              className="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-700 ease-in-out hidden md:block"
-              style={{ opacity: 1 }}
+              width={720} // Typical desktop width
+              height={480} // Maintain aspect ratio (e.g., 16:9 for 1920px width)
+              className="absolute inset-0 w-full h-full object-scale-down z-0 transition-opacity duration-700 ease-in-out hidden md:block"
+              // style={{ opacity: 1 }}
             />
           )}
           {/* Fallback image if neither mobile nor desktop specific images are provided */}
@@ -170,12 +170,12 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ banners, children, auto
 
       {/* Navigation Dots */}
       {banners.length > 1 && (
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2 z-30">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2 z-30 ">
           {banners.map((_, index) => (
             <button
               key={index}
               onClick={() => goToBanner(index)}
-              className={`w-3 h-10 rounded-full transition-all duration-300
+              className={`w-3 h-4 rounded-full transition-all duration-300
                 ${index === currentBannerIndex ? 'bg-white scale-125' : 'bg-gray-400 bg-opacity-75'}`}
               aria-label={`Go to banner ${index + 1}`}
             ></button>

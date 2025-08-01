@@ -10,20 +10,52 @@ export default function HomePage() {
     {
       mediaType: "image" as const,
       imgSrcMobile: "/mobile-banner-1.jpg",
-      imgSrcDesktop: "/banner-1-desktop.jpg",
+      imgSrcDesktop: "/Slide12.jpeg",
       altText: "Cardiology background",
       title: "",
       description: "",
     linkHref:"",
     linkText:""
     },  
+    {
+      mediaType: "image" as const,
+      imgSrcMobile: "/mobile-banner-2.jpg",
+      imgSrcDesktop: "/Slide13.jpeg",
+      altText: "Orthopedics background",
+      title: "",
+      description: "",
+    linkHref:"",
+    linkText:""
+    },
+    {
+      mediaType: "image" as const,
+      imgSrcMobile: "/mobile-banner-3.jpg",
+      imgSrcDesktop: "/Slide10.jpeg",
+      altText: "Cancer Care background",
+      title: "",
+      description: "",
+    linkHref:"",
+    linkText:""
+    },
+    {
+      mediaType: "image" as const,
+      imgSrcMobile: "/mobile-banner-4.jpg",
+      imgSrcDesktop: "/Slide11.jpeg",
+      altText: "Cosmetic Surgery background",
+      title: "",
+      description: "",
+    linkHref:"",
+    linkText:""
+    },
+    
   ];
 
   return (
     <>
       {/* Hero Section using BannerCarousel component */}
+      <div className="mt-2">
       <BannerCarousel banners={banners} autoSlideInterval={6000} />
-
+      </div>
       {/* Why Choose Viveon */}
       <section className="py-12 bg-white">
         <div className="max-w-6xl mx-auto px-4 text-center">
