@@ -1,48 +1,10 @@
-"use client"; // This directive is important for Next.js 13+ App Router components
+// Your existing ContactPage.tsx
+"use client";
 
-import React, { useState } from 'react';
-// Removed Next.js Link import as standard <a> tags are used in this context
+import ContactForm from '@/components/contactForm';
+import React from 'react';
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-    country: '', // Added country to form data
-    mobile: '',  // Added mobile to form data
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  // ⚠️ Replace the URL below with your actual Google Apps Script deployment URL
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const form = new FormData();
-    for (const key in formData) {
-      form.append(key, formData[key as keyof typeof formData]);
-    }
-
-    const response = await fetch('https://script.google.com/macros/s/AKfycbxpLhEerdzXBMWpxFLkXAue9fWxMK69VFO61LEupt_pK1WFxXw-Xbali5-DbZcNIGQ9/exec', {
-      method: 'POST',
-      body: form,
-    });
-
-    if (response.ok) {
-      alert('Thank you! Your message has been submitted.');
-      setFormData({ name: '', email: '', subject: '', message: '', country: '', mobile: '' });
-    } else {
-      alert('Something went wrong. Please try again.');
-    }
-  };
-
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
@@ -61,94 +23,8 @@ export default function ContactPage() {
       {/* Contact Form & Info Section */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">Send Us a Message</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#2C5F56] focus:border-[#2C5F56] sm:text-sm"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#2C5F56] focus:border-[#2C5F56] sm:text-sm"
-                />
-              </div>
-              {/* Added Country Field */}
-              <div>
-                <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-1">Country</label>
-                <input
-                  type="text"
-                  id="country"
-                  name="country"
-                  value={formData.country}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#2C5F56] focus:border-[#2C5F56] sm:text-sm"
-                />
-              </div>
-              {/* Added Mobile Number Field */}
-              <div>
-                <label htmlFor="mobile" className="block text-sm font-medium text-gray-700 mb-1">Mobile Number</label>
-                <input
-                  type="tel" // Use type="tel" for phone numbers
-                  id="mobile"
-                  name="mobile"
-                  value={formData.mobile}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#2C5F56] focus:border-[#2C5F56] sm:text-sm"
-                />
-              </div>
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#2C5F56] focus:border-[#2C5F56] sm:text-sm"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Your Query</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#2C5F56] focus:border-[#2C5F56] sm:text-sm"
-                ></textarea>
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  className="inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-[#2C5F56] hover:bg-[#1A403A] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2C5F56] transition-colors duration-200"
-                >
-                  Send Message
-                </button>
-              </div>
-            </form>
-          </div>
+          {/* Contact Form Component */}
+          <ContactForm />
 
           {/* Contact Information */}
           <div>
@@ -173,14 +49,11 @@ export default function ContactPage() {
                  support@viveonglobalhealth.com
               </p>
             </div>
-
-            {/* Map Placeholder */}
-           
           </div>
         </div>
       </section>
 
-      {/* Call to Action (Re-used from About Us page) */}
+      {/* Call to Action */}
       <section className="py-16 px-4 bg-[#014c50] text-white text-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Have More Questions?</h2>
@@ -188,7 +61,7 @@ export default function ContactPage() {
             Don&apos;t hesitate to reach out. Our team is ready to assist you.
           </p>
           <a
-            href="https://wa.me/919875244331?text=Hi i want to enquire about medical tourism" // Link back to contact page or another relevant page
+            href="https://wa.me/919875244331?text=Hi i want to enquire about medical tourism"
             className="inline-block bg-white text-[#2C5F56] font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors duration-200 shadow-lg"
           >
             Send Us a Message

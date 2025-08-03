@@ -1,11 +1,36 @@
 "use client"; // This directive is important for Next.js 13+ App Router components
 
 import Link from 'next/link';
-import React from 'react';
-// import Image from 'next/image'; // Removed: Replaced with standard <img>
-// import Link from 'next/link';   // Removed: Replaced with standard <a>
+import React, { useState } from 'react';
 
 export default function AboutUsPage() {
+  const [showMoreHemant, setShowMoreHemant] = useState(false);
+  const [showMoreDirector, setShowMoreDirector] = useState(false);
+
+  const hemantText = `Hemant is the esteemed President of Viveon GlobalHealth. With a background in strategic development and a passion for global healthcare initiatives, he drives the company's vision for accessible and high-quality medical tourism. His leadership is instrumental in forging partnerships and ensuring exceptional patient experiences.`;
+
+  const directorText = `Visionary Healthcare Leader | Global Patient Mobility Specialist | Strategic Hospital Operations Expert. With over two decades of hands-on experience in hospital management, complete healthcare marketing, and strategic partnerships. His passion lies in transforming healthcare institutions with strategic insight, optimizing operations, and delivering patient-centric services. Our goal is to make Viveon GlobalHealth the premier platform for global patient mobility, known for compassionate care, international access, and unwavering trust. He is committed to making Viveon GlobalHealth a globally respected name in medical value travel and integrated care.`;
+
+  const renderTextWithReadMore = (text:any, showMore:any, setShowMore:any) => {
+    const lines = text.split('. ');
+    const displayedLines = showMore ? lines : lines.slice(0, 2); // Show 2 lines by default
+    const isTruncated = lines.length > 2;
+
+    return (
+      <p className="text-gray-600 leading-relaxed">
+        {displayedLines.join('. ') + (isTruncated && !showMore ? '...' : '')}
+        {isTruncated && (
+          <button
+            onClick={() => setShowMore(!showMore)}
+            className="text-[#2C5F56] font-semibold ml-2"
+          >
+            {showMore ? 'Read Less' : 'Read More'}
+          </button>
+        )}
+      </p>
+    );
+  };
+
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
@@ -58,7 +83,7 @@ export default function AboutUsPage() {
       {/* Our Vision Section */}
       <section className="py-16 px-4 bg-gray-100">
         <div className="max-w-6xl mx-auto">
-         
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-gray-600 leading-relaxed text-2xl">
@@ -77,47 +102,46 @@ export default function AboutUsPage() {
       </section>
 
       {/* Our Team Section */}
-      <section className="py-16 px-4 bg-white text-center">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
           <div className="mb-8 relative text-white py-4 px-6 w-full mx-auto overflow-hidden bg-gradient-to-r from-[#0F2824] to-[#014c50] rounded">
             <h2 className="text-4xl font-bold text-white text-center">Our Team</h2>
           </div>
-          <img
-            src="/Slide8.jpg"
-            alt="Viveon Global Health Team"
-            className="w-full h-auto rounded-lg shadow-lg object-cover mx-auto"
-            width={1024}
-          />
-        </div>
-      </section>
-
-      {/* Director's Vision Section */}
-      <section className="py-16 px-4 bg-gray-100">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-8 relative text-white py-4 px-6 w-3/4 mx-auto overflow-hidden bg-gradient-to-r from-[#0F2824] to-[#014c50] rounded">
-            <h2 className="text-4xl font-bold text-white text-center">Director&apos;s Vision</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="w-full max-w-sm mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-center md:text-left">
+             {/* Director's Section */}
+            <div className="flex flex-col md:flex-row items-center md:items-start md:space-x-8 mt-12 md:mt-0">
+              <div className="md:flex-shrink-0">
                 <img
                   src="/director1.jpg"
                   alt="Director of Viveon Global Health"
-                  className="w-full h-96 rounded-lg shadow-lg object-cover"
+                  className="w-32 h-32 rounded-full shadow-lg object-cover mx-auto md:mx-0"
+                  width={128}
+                  height={128}
                 />
               </div>
+              <div className="mt-4 md:mt-0">
+                <h3 className="text-2xl font-bold text-gray-800">Shahid Parwez <br/><span className="text-lg font-normal">Founder & Director</span></h3>
+                {renderTextWithReadMore(directorText, showMoreDirector, setShowMoreDirector)}
+              </div>
             </div>
-            <div>
-              <p className="text-gray-600 leading-relaxed text-lg">
-                <strong>Visionary Healthcare Leader | Global Patient Mobility Specialist | Strategic Hospital Operations Expert</strong>
-              </p>
-              <p className="text-gray-600 leading-relaxed text-lg mt-4">
-                With over two decades of hands-on experience in hospital management, complete healthcare marketing, and strategic partnerships. His passion lies in transforming healthcare institutions with strategic insight, optimizing operations, and delivering patient-centric services.
-              </p>
-              <p className="text-gray-600 leading-relaxed text-lg mt-4">
-                Our goal is to make Viveon GlobalHealth the premier platform for global patient mobility, known for compassionate care, international access, and unwavering trust. He is committed to making Viveon GlobalHealth a globally respected name in medical value travel and integrated care.
-              </p>
+            {/* Hemant Section */}
+            <div className="flex flex-col md:flex-row items-center md:items-start md:space-x-8">
+              <div className="md:flex-shrink-0">
+                <img
+                  src="/Hemant.jpeg"
+                  alt="Hemant - President of Viveon Global Health"
+                  className="w-32 h-32 rounded-full shadow-lg object-cover mx-auto md:mx-0"
+                  width={128}
+                  height={128}
+                />
+              </div>
+              <div className="mt-4 md:mt-0">
+                <h3 className="text-2xl font-bold text-gray-800">Hemant <br/><span className="text-lg font-normal">President</span></h3>
+                {renderTextWithReadMore(hemantText, showMoreHemant, setShowMoreHemant)}
+              </div>
             </div>
+
+           
           </div>
         </div>
       </section>
