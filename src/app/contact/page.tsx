@@ -26,7 +26,7 @@ export default function ContactPage() {
     e.preventDefault();
 
     const form = new FormData();
-    for (let key in formData) {
+    for (const key in formData) {
       form.append(key, formData[key as keyof typeof formData]);
     }
 
