@@ -21,12 +21,26 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // ⚠️ Replace the URL below with your actual Google Apps Script deployment URL
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the formData to your backend or an email service
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.'); // Using alert for demo, replace with custom modal
-    setFormData({ name: '', email: '', subject: '', message: '', country: '', mobile: '' }); // Clear form
+
+    const form = new FormData();
+    for (let key in formData) {
+      form.append(key, formData[key as keyof typeof formData]);
+    }
+
+    const response = await fetch('https://script.google.com/macros/s/AKfycbxpLhEerdzXBMWpxFLkXAue9fWxMK69VFO61LEupt_pK1WFxXw-Xbali5-DbZcNIGQ9/exec', {
+      method: 'POST',
+      body: form,
+    });
+
+    if (response.ok) {
+      alert('Thank you! Your message has been submitted.');
+      setFormData({ name: '', email: '', subject: '', message: '', country: '', mobile: '' });
+    } else {
+      alert('Something went wrong. Please try again.');
+    }
   };
 
   return (
