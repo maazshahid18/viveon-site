@@ -11,7 +11,7 @@ export default function AboutUsPage() {
 
   const directorText = `Visionary Healthcare Leader | Global Patient Mobility Specialist | Strategic Hospital Operations Expert. With over two decades of hands-on experience in hospital management, complete healthcare marketing, and strategic partnerships. His passion lies in transforming healthcare institutions with strategic insight, optimizing operations, and delivering patient-centric services. Our goal is to make Viveon GlobalHealth the premier platform for global patient mobility, known for compassionate care, international access, and unwavering trust. He is committed to making Viveon GlobalHealth a globally respected name in medical value travel and integrated care.`;
 
-  const renderTextWithReadMore = (text:any, showMore:any, setShowMore:any) => {
+ const renderTextWithReadMore = (text: string, showMore: boolean, setShowMore: React.Dispatch<React.SetStateAction<boolean>>) => {
     const lines = text.split('. ');
     const displayedLines = showMore ? lines : lines.slice(0, 2); // Show 2 lines by default
     const isTruncated = lines.length > 2;
