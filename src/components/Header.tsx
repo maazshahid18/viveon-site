@@ -12,9 +12,9 @@ function Navigation() {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about-us" },
     { name: "Services", href: "/services" },
-    { name: "For Patients", href: "/for-patients" },
+    // { name: "For Patients", href: "/for-patients" },
     { name: "For Partners", href: "/for-partners" },
-    { name: "Blog/News", href: "/blog" }, // Common path for blog/news
+    // { name: "Blog/News", href: "/blog" }, // Common path for blog/news
     { name: "Contact", href: "/contact" },
   ];
 
