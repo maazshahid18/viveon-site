@@ -22,7 +22,7 @@ export default function AboutUsPage() {
         {isTruncated && (
           <button
             onClick={() => setShowMore(!showMore)}
-            className="text-[#2C5F56] font-semibold ml-2"
+            className="text-[#2C5F56] font-semibold ml-2 hover:cursor-pointer"
           >
             {showMore ? 'Read Less' : 'Read More'}
           </button>
