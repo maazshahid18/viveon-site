@@ -7,6 +7,9 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Viveon Global Health",
   description: "Connecting international patients with world-class medical services in India.",
+  icons: {
+  icon: "/favicon.png",
+},
 };
 
 export default function RootLayout({
