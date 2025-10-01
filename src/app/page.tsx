@@ -36,7 +36,7 @@ export default function HomePage() {
     },
     {
       mediaType: "image" as const,
-      imgSrcMobile: "/mobile-banner-3.jpg",
+      imgSrcMobile: "/mobile-banner-3.jpeg",
       imgSrcDesktop: "/Slide10.jpeg",
       altText: "Cancer Care background",
       title: "",
@@ -448,7 +448,7 @@ export default function HomePage() {
       {/* The Request a Callback popup */}
       {isCallbackPopupOpen && (
        <div className="fixed inset-0 flex items-center justify-center z-50  bg-opacity-40 backdrop-blur-sm">
-          <div className="bg-white p-8 rounded-lg max-w-md w-full relative">
+          <div className="bg-white p-8 rounded-lg max-w-md w-full relative shadow-2xl">
             <ContactForm
               onClose={() => setIsCallbackPopupOpen(false)}
               isPopup={true}

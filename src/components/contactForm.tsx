@@ -2,6 +2,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 
 interface ContactFormProps {
   onClose?: () => void;
@@ -31,29 +32,30 @@ export default function ContactForm({ onClose, title = "Send Us a Message", isPo
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!/^\d*$/.test(formData.mobile)) {
+      alert("Mobile number should contain only digits");
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
-      const params = new URLSearchParams();
-      for (const key in formData) {
-        params.append(key, formData[key as keyof typeof formData]);
-      }
-
-      const response = await fetch('https://script.google.com/macros/s/AKfycbxpLhEerdzXBMWpxFLkXAue9fWxMK69VFO61LEupt_pK1WFxXw-Xbali5-DbZcNIGQ9/exec', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: params.toString(),
-        mode: 'cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        const result = await response.json();
+        const result = await response.json().catch(() => ({ success: true }));
         if (result.success) {
-          alert('Thank you! Your message has been submitted successfully.');
+          toast.success('Your message has been sent!');
           setFormData({ name: '', email: '', subject: '', message: '', country: '', mobile: '' });
-          if (onClose) onClose(); // Close the modal if it's a popup
+          // close the form after showing toast
+          setTimeout(() => {
+            if (onClose) onClose();
+          }, 500);
         } else {
           throw new Error(result.error || 'Submission failed');
         }
@@ -69,7 +71,7 @@ export default function ContactForm({ onClose, title = "Send Us a Message", isPo
   };
 
   return (
-    <div className={`p-6 ${isPopup ? 'rounded-lg shadow-xl' : ''}`}>
+    <div className={`p-2 ${isPopup ? 'rounded-lg' : ''}`}>
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-3xl font-bold text-gray-800">{title}</h2>
         {isPopup && onClose && (
@@ -80,9 +82,9 @@ export default function ContactForm({ onClose, title = "Send Us a Message", isPo
           </button>
         )}
       </div>
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-2 grid grid-cols-2 gap-4">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
           <input
             type="text"
             id="name"
@@ -95,7 +97,7 @@ export default function ContactForm({ onClose, title = "Send Us a Message", isPo
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
           <input
             type="email"
             id="email"
@@ -146,7 +148,8 @@ export default function ContactForm({ onClose, title = "Send Us a Message", isPo
             className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#2C5F56] focus:border-[#2C5F56] sm:text-sm disabled:bg-gray-100 disabled:cursor-not-allowed"
           />
         </div>
-        <div>
+        
+        <div className="col-span-2">
           <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Your Query</label>
           <textarea
             id="message"
@@ -156,10 +159,8 @@ export default function ContactForm({ onClose, title = "Send Us a Message", isPo
             onChange={handleChange}
             required
             disabled={isSubmitting}
-            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#2C5F56] focus:border-[#2C5F56] sm:text-sm disabled:bg-gray-100 disabled:cursor-not-allowed"
+            className="my-4 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#2C5F56] focus:border-[#2C5F56] sm:text-sm disabled:bg-gray-100 disabled:cursor-not-allowed"
           ></textarea>
-        </div>
-        <div>
           <button
             type="submit"
             disabled={isSubmitting}
