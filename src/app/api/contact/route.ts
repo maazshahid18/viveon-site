@@ -7,7 +7,7 @@ export async function POST(request: Request) {
 
     const params = new URLSearchParams();
     for (const key of Object.keys(data || {})) {
-      const val = (data as any)[key];
+      const val = (data as Record<string, unknown>)[key];
       if (val !== undefined && val !== null) {
         params.append(key, String(val));
       }
